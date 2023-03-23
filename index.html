@@ -1,0 +1,72 @@
+<html>
+
+<head>
+
+  <style>
+     ul{
+     	list-style-type: none;
+     	position: absolute;
+     }
+     ul li{
+     	cursor: pointer;
+     	display: inline-block;
+     	padding: 16px
+     }
+     ul li:hover{
+     	background-color: green;
+     	color: white
+     }
+     #three li:hover, #four li:hover{
+     	background-color: green;
+     	color: white,
+     }
+  </style>
+
+  <script type="text/javascript">
+  	window.onload = function(){
+  		document.getElementById("three").hidden=true;
+  		document.getElementById("four").hidden=true;
+  	}
+
+  	function threeOperationOver(){
+  		document.getElementById("three").hidden=false;
+  	}
+  	function threeOperationOut(){
+  		document.getElementById("three").hidden=true;
+  	}
+  	function fourOperationOver(){
+  		document.getElementById("four").hidden=false;
+  	}
+  	function fourOperationOut(){
+  		document.getElementById("four").hidden=true;
+  	}
+  </script>
+
+</head>
+<body>
+    <ul style="background-color: aquamarine;">
+        <li>One</li>
+        <li>Two</li>
+      
+        <li id="threeMain" onmouseover="threeOperationOver()" onmouseout="threeOperationOut()">
+          Three
+          <ul id="three" style="background-color: pink;">
+            <li>Two - One</li>
+            <li>Two - Two</li>
+            <li>Two - Three</li>
+          </ul>
+        </li>
+      
+        <li id="fourMain" onmouseover="fourOperationOver()" onmouseout="fourOperationOut()">
+          Four
+        <ul id="four" style="background-color: pink;">
+            <li>Three - One</li>
+            <li>Three - Two</li>
+            <li>Three - Three</li>
+          </ul>
+        </li>
+        
+        <li>Five</li>
+      </ul>
+</body>
+</html>
